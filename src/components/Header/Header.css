@@ -1,0 +1,23 @@
+header {
+  @apply pb-[calc(100vh-384px)] md:pb-[calc(100vh-340px)] lg:pb-[calc(100vh-399px)];
+}
+
+.HeroText {
+  @apply mt-32 ml-0 md:ml-44 lg:mt-36 lg:ml-60;
+}
+
+.HeroText h1 {
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-accent-2 mb-10 md:mb-6 text-center md:text-left;
+}
+
+.HeroText h2 {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-accent-1 mb-20 md:mb-0 text-center md:text-left;
+}
+
+.HeroImage {
+  @apply max-w-5xl mx-auto absolute bottom-0 left-0 right-0 text-center;
+}
+
+.MobileMenu__Background {
+  @apply fixed lg:hidden top-0 left-0 w-full h-full backdrop-blur-[3px] z-20;
+}

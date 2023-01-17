@@ -1,0 +1,16 @@
+footer .IconLinks {
+  @apply flex md:hidden justify-center gap-12;
+}
+
+footer .IconLinks svg {
+  @apply text-accent-2 hover:text-accent-1 hover:scale-110 focus:text-accent-1 focus:scale-110 duration-300;
+}
+
+
+footer .TextLinks {
+  @apply font-fira-code text-accent-2 text-center mt-6 text-sm;
+}
+
+footer .TextLinks a {
+  @apply underline underline-offset-4 hover:text-accent-1 focus:text-accent-1 duration-300;
+}

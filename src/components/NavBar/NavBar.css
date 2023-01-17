@@ -1,0 +1,82 @@
+.Nav {
+  @apply pt-6 px-4 md:px-12 flex justify-between items-end fixed w-full duration-300 z-30;
+}
+
+.Nav .IconButton {
+  @apply w-12 h-12 rounded-full overflow-hidden border-2 border-accent-1 hover:scale-105 focus:scale-105 duration-300;
+}
+
+.Nav .IconButton img {
+  @apply h-full w-full;
+  border-radius: 50%;
+}
+
+.Nav .NavButtons {
+  @apply text-sm md:text-xs text-accent-2;
+}
+
+.Nav .MobileMenu {
+  @apply fixed z-10 bg-accent-2 top-0 pt-[120px] w-9/12 h-screen md:hidden;
+}
+
+.MobileMenu .NavButtons {
+  @apply flex flex-col gap-14 max-w-[180px] mx-auto text-center;
+  counter-reset: NavButton;
+}
+
+.Nav .NavButtons__Desktop {
+  @apply w-[600px] hidden md:flex justify-between items-center;
+}
+
+.Nav .NavButtons button {
+  @apply tracking-wide hover:text-accent-1 focus:text-accent-1 duration-300 relative;
+  counter-increment: NavButton;
+}
+
+.Nav .NavButtons button:before {
+  @apply text-accent-1 absolute md:static -top-6 mx-auto left-0 right-0 md:mr-1;
+  content: "0" counter(NavButton) "."
+}
+
+.Nav .NavButtons .ContactButton {
+  @apply flex items-center justify-center md:justify-start border border-accent-1 rounded-sm h-10 px-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer;
+}
+
+.Nav .MobileMenu__Button {
+  @apply flex md:hidden flex-col items-end w-[60px] px-3;
+}
+
+.Nav .MobileMenu__Button span {
+  @apply bg-accent-1 rounded-lg h-[2px] my-[4px];
+  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.Nav .MobileMenu__Button span:nth-of-type(1){
+  @apply w-full;
+}
+
+.Nav .MobileMenu__Button span:nth-of-type(2){
+  @apply w-9/12;
+}
+
+.Nav .MobileMenu__Button span:nth-of-type(3){
+  @apply w-1/2;
+}
+
+.Nav .MobileMenu__Button--open span:nth-of-type(1){
+  transform-origin: bottom;
+  transform: rotate(45deg) translate(8px,0px);
+}
+
+.Nav .MobileMenu__Button--open span:nth-of-type(2){
+  @apply w-full;
+  transform-origin: top;
+  transform: rotate(-45deg);
+  transform: translate(6px, -4px) rotate(-45deg);
+}
+
+.Nav .MobileMenu__Button--open span:nth-of-type(3){
+  @apply w-1/2;
+  transform-origin: bottom;
+  transform: translate(4px, -20px) rotate(-45deg);
+}

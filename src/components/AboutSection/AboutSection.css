@@ -1,0 +1,20 @@
+.AboutSection {
+  @apply mt-24 flex flex-col items-start pt-2;
+}
+
+.AboutSection p {
+  @apply text-accent-1 mb-4;
+}
+
+.AboutSection .PhotoContainer {
+  @apply max-w-[300px] max-h-[242px] relative mx-auto xl:ml-0;
+}
+
+.AboutSection .PhotoContainer img {
+  @apply z-20 rounded-sm min-w-[272px] min-h-[217px] sm:min-w-[300px] sm:min-h-[242px];
+}
+
+.AboutSection .PhotoContainer:after {
+  @apply w-full h-full border-2 border-accent-1 top-4 left-4 absolute rounded-sm;
+  content: "";
+}

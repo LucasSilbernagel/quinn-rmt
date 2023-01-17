@@ -1,0 +1,51 @@
+.ProjectsSection {
+  @apply mt-24 pt-2;
+}
+
+.ProjectsSection .Project--mobile {
+  @apply mb-12 flex flex-col xl:hidden relative rounded-sm overflow-hidden;
+}
+
+.ProjectsSection .Project--mobile .gatsby-image-wrapper {
+  @apply absolute;
+}
+
+.ProjectsSection .Project--desktop {
+  @apply mb-24 relative h-[363px] hidden xl:flex;
+}
+
+.ProjectsSection .ImageLink {
+  @apply inline-block relative w-[580px] h-[363px];
+}
+
+.ProjectsSection .Overlay--mobile {
+  @apply absolute bg-accent-2 top-0 left-0 w-full h-full opacity-25 rounded-sm;
+}
+
+.ProjectsSection .Overlay2--mobile {
+  @apply absolute bg-accent-1 top-0 left-0 w-full h-full opacity-75 rounded-sm;
+}
+
+.ProjectsSection .ImageLink .Overlay--desktop {
+  @apply absolute bg-accent-2 top-0 left-0 w-full h-full opacity-50 hover:opacity-25 focus:opacity-25 duration-300 rounded-sm;
+}
+
+.ProjectsSection .ImageLink .Overlay2--desktop {
+  @apply absolute bg-black top-0 left-0 w-full h-full opacity-50 hover:opacity-25 focus:opacity-25 duration-300 rounded-sm;
+}
+
+.ProjectsSection .ProjectText {
+  @apply absolute top-14 w-[500px];
+}
+
+.ProjectsSection .ProjectName {
+  @apply text-2xl font-bold tracking-wide text-accent-2 hover:text-accent-1 focus:text-accent-1 duration-300;
+}
+
+.ProjectsSection .ProjectDescription {
+  @apply bg-accent-2 px-4 py-6 text-sm text-accent-2 tracking-wide mt-6 rounded-sm;
+}
+
+.ProjectsSection .IconLink {
+  @apply hover:text-accent-1 focus:text-accent-1 duration-300;
+}

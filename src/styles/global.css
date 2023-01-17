@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-white text-black;
+  font-family: "Inter", sans-serif;
+  scrollbar-color: #233554 transparent;
+}
+
+body::-webkit-scrollbar {
+  @apply w-2 bg-transparent h-full;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-accent-2 rounded-md;
+}
+
+main {
+  @apply mx-auto max-w-none sm:max-w-screen-lg md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg px-6 sm:px-12;
+  counter-reset: SectionHeader;
+}
+
+.AccentFont {
+  font-family: "Fira Code", sans-serif;
+}
+
+.AccentButton {
+  @apply mt-10 max-w-max flex items-center justify-center border border-accent-1 rounded-sm px-8 py-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer mx-auto md:mx-[unset] font-fira-code;
+}
+
+.SectionHeader {
+  @apply font-bold text-2xl mb-10 text-accent-2 flex items-center gap-2;
+  counter-increment: SectionHeader;
+}
+
+.SectionHeader:before {
+  @apply text-accent-1 mr-1 font-fira-code text-xl;
+  content: "0" counter(SectionHeader) "."
+}
+
+.SectionHeader:after {
+  @apply content-[''] w-[20vw] sm:w-[30vw] h-[1px] bg-accent-2 ml-2;
+}
