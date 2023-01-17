@@ -1,6 +1,6 @@
 # Quinn Bonnett, RMT
 
-Business website for Quinn Bonnett, a Registered Massage Therapist.
+Business website for Quinn Bonnett, Registered Massage Therapist.
 
 ## Tech stack
 - [Gatsby](https://www.gatsbyjs.com/)
