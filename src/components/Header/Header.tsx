@@ -1,7 +1,7 @@
 import { StaticImage } from 'gatsby-plugin-image'
 import { useEffect, useState } from 'react'
+import { FaCalendarAlt } from 'react-icons/fa'
 import NavBar from '../NavBar/NavBar'
-import SideBars from '../SideBars/SideBars'
 import './Header.css'
 
 interface HeaderProps {
@@ -53,25 +53,18 @@ const Header = ({ isHomepage }: HeaderProps) => {
         isHomepage={isHomepage}
       />
       {isHomepage && (
-        <>
-          <div className="HeroText">
-            <h1>Lucas Silbernagel</h1>
-            <h2>Front-End Developer</h2>
-            <a
-              href="mailto:hello@lucassilbernagel.com"
-              target="_blank"
-              rel="noreferrer"
-              className="AccentButton relative z-10"
-            >
-              Say hello
-            </a>
-          </div>
-          {windowHeight >= 568 && (
-            <div className="HeroImage">
-              <StaticImage alt="" src="../../images/toronto.png" />
-            </div>
-          )}
-        </>
+        <div className="HeroText">
+          <h1>Quinn Bonnett</h1>
+          <h2>Registered Massage Therapist</h2>
+          <a
+            href="https://quinnbonnettrmt.janeapp.com/#staff_member/1"
+            target="_blank"
+            rel="noreferrer"
+            className="AppointmentButton relative z-10 mt-12 mx-auto md:ml-0"
+          >
+            <FaCalendarAlt /> Book an appointment
+          </a>
+        </div>
       )}
       {isMenuOpening && (
         <div
@@ -79,7 +72,6 @@ const Header = ({ isHomepage }: HeaderProps) => {
           className="MobileMenu__Background"
         ></div>
       )}
-      <SideBars />
     </header>
   )
 }

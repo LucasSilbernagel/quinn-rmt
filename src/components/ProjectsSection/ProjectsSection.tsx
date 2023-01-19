@@ -72,7 +72,7 @@ const ProjectsSection = () => {
                     <div className="ProjectDescription">
                       <p>{project.description}</p>
                     </div>
-                    <div className="text-accent-2 text-sm font-fira-code mt-6">
+                    <div className="text-accent-2 text-sm mt-6">
                       <ul
                         className={`flex flex-wrap gap-x-4 gap-y-2 ${
                           isEven ? 'justify-end pl-32' : 'justify-start pr-32'
@@ -150,7 +150,7 @@ const ProjectsSection = () => {
                     <div className=" text-sm text-accent-2 tracking-wide my-6">
                       <p>{project.description}</p>
                     </div>
-                    <div className="text-accent-2 text-sm font-fira-code mb-6">
+                    <div className="text-accent-2 text-sm mb-6">
                       <ul className="flex flex-wrap gap-x-4 gap-y-2">
                         {project.techStack.map((skill, skillIndex) => {
                           return (

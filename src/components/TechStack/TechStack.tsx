@@ -11,7 +11,7 @@ const TechStack = () => {
           {TECH_STACK.map((skillset) => {
             return (
               <li key={skillset.id} className="flex flex-col items-center">
-                <h4 className="font-fira-code text-accent-1 text-center mb-1">
+                <h4 className="text-accent-1 text-center mb-1">
                   {skillset.section}
                 </h4>
                 <div className="SkillBox">

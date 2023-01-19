@@ -46,15 +46,13 @@ const NavBar = (props: NavBarProps) => {
   return (
     <nav
       className={`Nav ${
-        isNavVisible
-          ? 'top-0 backdrop-blur-[3px] bg-[rgba(11,25,46,0.9)]'
-          : 'top-[-100px]'
+        isNavVisible ? 'top-0 backdrop-blur-[3px] bg-white' : 'top-[-120px]'
       } ${currentScrollPos > 80 ? 'shadow-lg pb-4' : ''}`}
     >
       <div className="z-10">
         <button className="IconButton" onClick={handleIconButtonClick}>
           <StaticImage
-            src="../../images/profile-photo.jpg"
+            src="../../images/logo.png"
             alt="Lucas Silbernagel"
             className="h-full w-full"
           />
@@ -74,7 +72,7 @@ const NavBar = (props: NavBarProps) => {
         </button>
       </div>
       <div>
-        <div className="AccentFont NavButtons NavButtons__Desktop">
+        <div className="NavButtons NavButtons__Desktop">
           <NavButtons isHomepage={isHomepage} />
         </div>
         <div
@@ -84,7 +82,7 @@ const NavBar = (props: NavBarProps) => {
               : 'animate-slide-out -right-[500px]'
           } ${isMenuOpen ? 'visible' : 'invisible'}`}
         >
-          <div className="AccentFont NavButtons">
+          <div className="NavButtons">
             <NavButtons
               setIsMenuOpening={setIsMenuOpening}
               isHomepage={isHomepage}

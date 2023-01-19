@@ -8,7 +8,7 @@ footer .IconLinks svg {
 
 
 footer .TextLinks {
-  @apply font-fira-code text-accent-2 text-center mt-6 text-sm;
+  @apply text-accent-2 text-center mt-6 text-sm;
 }
 
 footer .TextLinks a {

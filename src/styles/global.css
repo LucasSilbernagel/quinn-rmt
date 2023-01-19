@@ -14,30 +14,27 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  @apply bg-accent-2 rounded-md;
+  @apply bg-accent-1 rounded-md;
 }
 
 main {
   @apply mx-auto max-w-none sm:max-w-screen-lg md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg px-6 sm:px-12;
-  counter-reset: SectionHeader;
-}
-
-.AccentFont {
-  font-family: "Fira Code", sans-serif;
 }
 
 .AccentButton {
-  @apply mt-10 max-w-max flex items-center justify-center border border-accent-1 rounded-sm px-8 py-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer mx-auto md:mx-[unset] font-fira-code;
+  @apply mt-10 max-w-max flex items-center justify-center border border-accent-1 rounded-sm px-8 py-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer mx-auto md:mx-[unset];
+}
+
+.AppointmentButton {
+  @apply flex items-center gap-2 bg-accent-1 text-white p-2 rounded-md hover:contrast-75 duration-300 max-w-max text-xl;
 }
 
 .SectionHeader {
   @apply font-bold text-2xl mb-10 text-accent-2 flex items-center gap-2;
-  counter-increment: SectionHeader;
 }
 
 .SectionHeader:before {
-  @apply text-accent-1 mr-1 font-fira-code text-xl;
-  content: "0" counter(SectionHeader) "."
+  @apply text-accent-1 mr-1 text-xl;
 }
 
 .SectionHeader:after {

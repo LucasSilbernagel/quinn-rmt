@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { navigate } from 'gatsby'
+import { FaCalendarAlt } from 'react-icons/fa'
 
 interface NavButtonsProps {
   isHomepage: boolean
@@ -12,9 +13,8 @@ const NavButtons = (props: NavButtonsProps) => {
 
   const buttons = [
     { label: 'About', selector: '#about-section' },
-    { label: 'Tech Stack', selector: '#tech-stack-section' },
-    { label: 'Experience', selector: '#experience-section' },
-    { label: 'Projects', selector: '#projects-section' },
+    { label: 'Pricing', selector: '#pricing-section' },
+    { label: 'Contact', selector: '#contact-section' },
   ]
 
   const handleClick = (selector: string) => {
@@ -45,12 +45,12 @@ const NavButtons = (props: NavButtonsProps) => {
         )
       })}
       <a
-        href="mailto:hello@lucassilbernagel.com"
+        href="https://quinnbonnettrmt.janeapp.com/#staff_member/1"
         target="_blank"
         rel="noreferrer"
-        className="ContactButton"
+        className="AppointmentButton"
       >
-        Say hello
+        <FaCalendarAlt /> Book an appointment
       </a>
     </>
   )
