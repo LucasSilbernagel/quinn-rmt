@@ -30,13 +30,13 @@ main {
 }
 
 .SectionHeader {
-  @apply font-bold text-2xl mb-10 text-accent-2 flex items-center gap-2;
+  @apply font-bold text-2xl mb-10 text-accent-1 flex items-center gap-2;
 }
 
 .SectionHeader:before {
-  @apply text-accent-1 mr-1 text-xl;
+  @apply text-accent-3 mr-1 text-xl;
 }
 
 .SectionHeader:after {
-  @apply content-[''] w-[20vw] sm:w-[30vw] h-[1px] bg-accent-2 ml-2;
+  @apply content-[''] w-[20vw] sm:w-[30vw] h-[1px] bg-accent-3 ml-2;
 }

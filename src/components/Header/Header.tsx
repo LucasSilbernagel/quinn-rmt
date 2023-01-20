@@ -60,20 +60,22 @@ const Header = ({ isHomepage }: HeaderProps) => {
           className="MobileMenu__Background"
         ></div>
       )}
-      <div className="w-full flex justify-center">
-        <button
-          onClick={() => scrollTo('#about-section')}
-          aria-label="scroll down"
-        >
-          <div className="ScrollButton">
-            <div>
-              <span className="ScrollArrow ScrollArrow__First"></span>
-              <span className="ScrollArrow ScrollArrow__Second"></span>
-              <span className="ScrollArrow ScrollArrow__Third"></span>
+      {isHomepage && (
+        <div className="w-full flex justify-center">
+          <button
+            onClick={() => scrollTo('#about-section')}
+            aria-label="scroll down"
+          >
+            <div className="ScrollButton">
+              <div>
+                <span className="ScrollArrow ScrollArrow__First"></span>
+                <span className="ScrollArrow ScrollArrow__Second"></span>
+                <span className="ScrollArrow ScrollArrow__Third"></span>
+              </div>
             </div>
-          </div>
-        </button>
-      </div>
+          </button>
+        </div>
+      )}
     </header>
   )
 }
