@@ -21,3 +21,40 @@ header {
 .MobileMenu__Background {
   @apply fixed lg:hidden top-0 left-0 w-full h-full backdrop-blur-[3px] z-20;
 }
+
+.ScrollButton {
+  @apply mt-24 sm:mt-36;
+}
+
+.ScrollArrow {
+  @apply block w-[16px] h-[16px] border-2 border-r-accent-3 border-b-accent-3 border-l-transparent border-t-transparent;
+  transform: rotate(45deg);
+  margin: 0 0 3px 4px;
+}
+
+.ScrollArrow__First, .ScrollArrow__Second, .ScrollArrow__Third {
+  animation: down-animation 1s infinite;
+}
+
+.ScrollArrow__First {
+  animation-direction: alternate;
+  animation-delay: alternate;
+}
+
+.ScrollArrow__Second {
+  animation-delay: .2s;
+  animation-direction: alternate;
+  margin-top: -6px;
+}
+
+.ScrollArrow__Third {
+  animation-delay: .3s;
+  animation-direction: alternate;
+  margin-top: -6px;
+}
+
+@keyframes down-animation {
+  0% { opacity: 0; }
+  50% { opacity: .5; }
+  100% { opacity: 1; }
+}

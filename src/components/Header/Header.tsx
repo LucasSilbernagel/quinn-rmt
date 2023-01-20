@@ -1,8 +1,8 @@
-import { StaticImage } from 'gatsby-plugin-image'
 import { useEffect, useState } from 'react'
 import { FaCalendarAlt } from 'react-icons/fa'
 import NavBar from '../NavBar/NavBar'
 import './Header.css'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 interface HeaderProps {
   isHomepage: boolean
@@ -11,18 +11,6 @@ interface HeaderProps {
 const Header = ({ isHomepage }: HeaderProps) => {
   const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [windowHeight, setWindowHeight] = useState(0)
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowHeight(window.innerHeight)
-    }
-    window.addEventListener('resize', handleResize)
-    handleResize()
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [setWindowHeight])
 
   useEffect(() => {
     if (isMenuOpening) {
@@ -72,6 +60,17 @@ const Header = ({ isHomepage }: HeaderProps) => {
           className="MobileMenu__Background"
         ></div>
       )}
+      <div className="w-full flex justify-center">
+        <button onClick={() => scrollTo('#about-section')}>
+          <div className="ScrollButton">
+            <div>
+              <span className="ScrollArrow ScrollArrow__First"></span>
+              <span className="ScrollArrow ScrollArrow__Second"></span>
+              <span className="ScrollArrow ScrollArrow__Third"></span>
+            </div>
+          </div>
+        </button>
+      </div>
     </header>
   )
 }
