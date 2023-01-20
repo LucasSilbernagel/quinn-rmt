@@ -61,7 +61,10 @@ const Header = ({ isHomepage }: HeaderProps) => {
         ></div>
       )}
       <div className="w-full flex justify-center">
-        <button onClick={() => scrollTo('#about-section')}>
+        <button
+          onClick={() => scrollTo('#about-section')}
+          aria-label="scroll down"
+        >
           <div className="ScrollButton">
             <div>
               <span className="ScrollArrow ScrollArrow__First"></span>
