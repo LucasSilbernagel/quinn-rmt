@@ -41,7 +41,7 @@ const AboutSection = () => {
           <div className="PhotoContainer">
             <StaticImage
               alt="Quinn Bonnett, RMT"
-              src="../../images/Quinn4.png"
+              src="../../images/Quinn.jpg"
             />
           </div>
         </div>
