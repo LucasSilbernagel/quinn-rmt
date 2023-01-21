@@ -21,10 +21,6 @@ main {
   @apply mx-auto max-w-none sm:max-w-screen-lg md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg px-6 sm:px-12;
 }
 
-.AccentButton {
-  @apply mt-10 max-w-max flex items-center justify-center border border-accent-1 rounded-sm px-8 py-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer mx-auto md:mx-[unset];
-}
-
 .AppointmentButton {
   @apply flex items-center gap-2 bg-accent-1 text-white p-2 rounded-md hover:contrast-75 duration-300 max-w-max text-xl shadow-accent-1 shadow-md active:shadow-none;
 }

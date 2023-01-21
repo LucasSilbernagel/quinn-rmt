@@ -3,8 +3,8 @@ import type { GatsbyConfig } from 'gatsby'
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Quinn Bonnett | RMT`,
-    description: `Website for Quinn Bonnett, Registered Massage Therapist`,
-    image: '/portfolio.png',
+    description: `Business website for Quinn Bonnett, Registered Massage Therapist`,
+    image: '/website.png',
     siteUrl: `https://quinnbonnettrmt.com/`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

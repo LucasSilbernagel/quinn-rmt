@@ -4,7 +4,7 @@ import Footer from '../components/Footer/Footer'
 import { SEO } from '../components/Seo'
 
 export const Head: HeadFC = () => (
-  <SEO title="Page Not Found | Lucas Silbernagel" />
+  <SEO title="Page Not Found | Quinn Bonnett, RMT" />
 )
 
 const NotFoundPage = () => {
