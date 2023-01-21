@@ -23,7 +23,7 @@ header {
 }
 
 .ScrollButton {
-  @apply mt-24 sm:mt-36;
+  @apply w-full flex justify-center mt-24 sm:mt-36;
 }
 
 .ScrollArrow {
