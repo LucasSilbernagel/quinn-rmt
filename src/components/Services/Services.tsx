@@ -42,7 +42,7 @@ const Pricing = () => {
                 rel="noreferrer"
                 className="text-blue-600 underline hover:underline-offset-2 focus:underline-offset-2"
               >
-                quinnbonnettrmt@outlook.com
+                QuinnBonnettRMT@outlook.com
               </a>
             </li>
           </ul>
