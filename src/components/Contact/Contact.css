@@ -1,0 +1,11 @@
+.Contact {
+  @apply mt-24 pt-2;
+}
+
+.Contact .MapContainer {
+  @apply max-w-[500px] mx-auto;
+}
+
+.Contact .MapContainer img {
+  @apply rounded-sm;
+}
