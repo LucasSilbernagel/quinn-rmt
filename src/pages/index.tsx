@@ -1,7 +1,7 @@
 import { HeadFC } from 'gatsby'
 import Header from '../components/Header/Header'
 import AboutSection from '../components/AboutSection/AboutSection'
-import TechStack from '../components/TechStack/TechStack'
+import TechStack from '../components/Services/Services'
 import Experience from '../components/Experience/Experience'
 import ProjectsSection from '../components/ProjectsSection/ProjectsSection'
 import Footer from '../components/Footer/Footer'

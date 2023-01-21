@@ -7,7 +7,7 @@
 }
 
 .AboutSection .PhotoContainer {
-  @apply relative mx-auto xl:ml-0;
+  @apply relative mx-auto xl:ml-0 max-w-[300px];
 }
 
 .AboutSection .PhotoContainer img {

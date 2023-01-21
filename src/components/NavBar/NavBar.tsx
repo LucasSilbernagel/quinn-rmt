@@ -58,7 +58,7 @@ const NavBar = (props: NavBarProps) => {
           />
         </button>
       </div>
-      <div className={`flex md:hidden z-20 fixed right-4`}>
+      <div className={`flex lg:hidden z-20 fixed right-4`}>
         <button
           aria-label={isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'}
           onClick={() => setIsMenuOpening(!isMenuOpen)}

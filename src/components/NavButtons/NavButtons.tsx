@@ -13,7 +13,7 @@ const NavButtons = (props: NavButtonsProps) => {
 
   const buttons = [
     { label: 'About', selector: '#about-section' },
-    { label: 'Pricing', selector: '#pricing-section' },
+    { label: 'Services & Pricing', selector: '#services-section' },
     { label: 'Contact', selector: '#contact-section' },
   ]
 
