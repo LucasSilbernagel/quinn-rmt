@@ -14,15 +14,14 @@ const AboutSection = () => {
         <div className="flex gap-12 flex-col xl:flex-row">
           <div>
             <p>
-              Quinn graduated with honours from International Academy of Health
-              Science in 2018. He focuses on decreasing pain, improving function
-              and helping you reach your movement goals. Whether they are to
-              reach the next level in sports, function better at work or play
-              with your kids.
-            </p>
-            <p>
-              Quinn’s hobbies include horseback riding, wood working and
-              spending time in the outdoors.
+              I graduated with honours from International Academy of Health
+              Science in 2018. I started working at Agility Physio clinic in
+              Ottawa after my graduation. My approach while working with you is
+              to understand your current goals and find strategies to help you
+              reach them. I do this through a focused and straight forward
+              approach regarding treatment and homecare. Whether your goal is to
+              reach a new level of performance or to feel comfortable in the
+              activities of daily life, I will help you get there.
             </p>
             {/* <SmoothCollapse expanded={isShowingMore}>
               <p>More info here.</p>
