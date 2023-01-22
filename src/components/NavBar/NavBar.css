@@ -30,10 +30,6 @@
   @apply tracking-wide border border-transparent border-b-transparent hover:text-accent-2 hover:border-b-accent-2 focus:text-accent-2 duration-300 transition-all relative;
 }
 
-.Nav .NavButtons button:before {
-  @apply text-accent-1 absolute md:static -top-6 mx-auto left-0 right-0 md:mr-1;
-}
-
 .Nav .NavButtons .ContactButton {
   @apply flex items-center justify-center md:justify-start border border-accent-1 rounded-sm h-10 px-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer;
 }

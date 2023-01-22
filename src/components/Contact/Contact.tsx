@@ -28,7 +28,7 @@ const Contact = () => {
                   href="mailto:quinnbonnettrmt@outlook.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-blue-600 underline hover:underline-offset-2 focus:underline-offset-2"
+                  className="ExternalLink"
                 >
                   QuinnBonnettRMT@outlook.com
                 </a>

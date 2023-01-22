@@ -36,3 +36,7 @@ main {
 .SectionHeader:after {
   @apply content-[''] w-[20vw] sm:w-[30vw] h-[1px] bg-accent-3 ml-2;
 }
+
+.ExternalLink {
+  @apply text-blue-600 underline hover:underline-offset-2 focus:underline-offset-2;
+}

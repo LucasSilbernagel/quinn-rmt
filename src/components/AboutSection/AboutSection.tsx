@@ -1,12 +1,8 @@
 import { StaticImage } from 'gatsby-plugin-image'
-// import { useState } from 'react'
 import './AboutSection.css'
-// import SmoothCollapse from 'react-smooth-collapse'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const AboutSection = () => {
-  // const [isShowingMore, setIsShowingMore] = useState(false)
-
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
       <div className="AboutSection" id="about-section">
@@ -23,19 +19,6 @@ const AboutSection = () => {
               reach a new level of performance or to feel comfortable in the
               activities of daily life, I will help you get there.
             </p>
-            {/* <SmoothCollapse expanded={isShowingMore}>
-              <p>More info here.</p>
-              <p>More info here.</p>
-              <p>More info here.</p>
-            </SmoothCollapse>
-            <div className="w-full flex justify-center">
-              <button
-                className="AppointmentButton"
-                onClick={() => setIsShowingMore(!isShowingMore)}
-              >
-                {isShowingMore ? 'Read less' : 'Read more'}
-              </button>
-            </div> */}
           </div>
           <div className="PhotoContainer">
             <StaticImage

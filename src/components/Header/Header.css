@@ -14,10 +14,6 @@ header {
   @apply text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-accent-3 mb-20 md:mb-0 text-center md:text-left;
 }
 
-.HeroImage {
-  @apply max-w-5xl mx-auto absolute bottom-0 left-0 right-0 text-center;
-}
-
 .MobileMenu__Background {
   @apply fixed lg:hidden top-0 left-0 w-full h-full backdrop-blur-[3px] z-20;
 }

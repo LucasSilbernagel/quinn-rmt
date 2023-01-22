@@ -53,7 +53,7 @@ const NavBar = (props: NavBarProps) => {
         <button className="IconButton" onClick={handleIconButtonClick}>
           <StaticImage
             src="../../images/logo.png"
-            alt="Lucas Silbernagel"
+            alt="Quinn Bonnett, RMT. Therapeutic massage and sports injury."
             className="h-full w-full"
           />
         </button>

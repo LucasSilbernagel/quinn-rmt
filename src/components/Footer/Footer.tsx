@@ -1,5 +1,4 @@
 import { FaCopyright } from 'react-icons/fa'
-import './Footer.css'
 
 const Footer = () => {
   return (
@@ -14,7 +13,7 @@ const Footer = () => {
             href="https://lucassilbernagel.com/"
             target="_blank"
             rel="noreferrer"
-            className="text-blue-600 underline hover:underline-offset-2 focus:underline-offset-2 font-bold"
+            className="ExternalLink font-bold"
           >
             Lucas Silbernagel
           </a>

@@ -1,11 +1,10 @@
 import { SERVICES } from '../../content/services'
-import './Services.css'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const Pricing = () => {
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-      <div className="Services" id="services-section">
+      <div className="mt-24 pt-2" id="services-section">
         <h3 className="SectionHeader">Services & Pricing</h3>
         <div className="flex justify-between flex-col xl:flex-row">
           <div>
@@ -40,7 +39,7 @@ const Pricing = () => {
                 href="mailto:quinnbonnettrmt@outlook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="text-blue-600 underline hover:underline-offset-2 focus:underline-offset-2"
+                className="ExternalLink"
               >
                 QuinnBonnettRMT@outlook.com
               </a>
