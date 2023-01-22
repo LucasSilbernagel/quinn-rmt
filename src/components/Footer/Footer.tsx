@@ -5,7 +5,8 @@ const Footer = () => {
     <footer className="mt-12 mb-6">
       <div className="text-black text-center mt-6 text-sm">
         <p className="mb-4 max-w-max mx-auto flex items-center">
-          <FaCopyright className="mr-2 text-xs" /> Quinn Bonnett, RMT
+          <FaCopyright aria-label="copyright" className="mr-2 text-xs" /> Quinn
+          Bonnett, RMT
         </p>
         <p>
           Website built by{' '}
