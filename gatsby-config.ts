@@ -2,7 +2,7 @@ import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Quinn Bonnett | RMT`,
+    title: `Quinn Bonnett | Registered Massage Therapist`,
     description: `Business website for Quinn Bonnett, Registered Massage Therapist`,
     image: '/website.png',
     siteUrl: `https://quinnbonnettrmt.com/`,
