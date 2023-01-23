@@ -11,7 +11,7 @@ header {
 }
 
 .HeroText h2 {
-  @apply text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-accent-3 mb-20 md:mb-0 text-center md:text-left;
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-[#5378AC] mb-20 md:mb-0 text-center md:text-left;
 }
 
 .MobileMenu__Background {
