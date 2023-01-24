@@ -17,10 +17,6 @@ const Contact = () => {
               <p>Vankleek Hill, ON</p>
               <p>K0B 1R0</p>
             </div>
-            <div className="mt-8">
-              <p>There is parking available in the back of the building.</p>
-              <p>Please use the back door when entering.</p>
-            </div>
             <ul className="my-8">
               <li className="flex gap-2 items-center">
                 <FaEnvelope aria-label="email address" className="text-2xl" />{' '}
@@ -35,7 +31,9 @@ const Contact = () => {
               </li>
               <li className="flex gap-2 items-center mt-8">
                 <FaPhoneAlt aria-label="phone number" className="text-2xl" />{' '}
-                514-895-2635
+                <a href="tel:514-779-4129" className="ExternalLink">
+                  514-779-4129
+                </a>
               </li>
               <li className="flex gap-2 items-center mt-8">
                 <a
@@ -46,6 +44,14 @@ const Contact = () => {
                   className="hover:scale-110 focus:scale-110 duration-300"
                 >
                   <FaFacebookSquare className="text-2xl" />
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100089508584242"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ExternalLink"
+                >
+                  Reach out on Facebook!
                 </a>
               </li>
             </ul>

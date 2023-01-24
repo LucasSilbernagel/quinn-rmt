@@ -9,7 +9,7 @@ const Pricing = () => {
         <div className="flex justify-between flex-col xl:flex-row">
           <div>
             <h4 className="mx-auto font-bold text-xl text-white bg-accent-1 max-w-max p-2 rounded-sm">
-              Therapeutic and sports injury massage
+              Therapeutic and Sports Injury Massage
             </h4>
             <ul className="mx-auto max-w-max pt-4">
               {SERVICES.map((service) => {
@@ -34,15 +34,7 @@ const Pricing = () => {
             <li>All prices include tax and are in Canadian dollars.</li>
             <li>Only cash or e-Transfer are accepted at this time.</li>
             <li>
-              Questions? Please reach out to{' '}
-              <a
-                href="mailto:quinnbonnettrmt@outlook.com"
-                target="_blank"
-                rel="noreferrer"
-                className="ExternalLink"
-              >
-                QuinnBonnettRMT@outlook.com
-              </a>
+              Questions? Please reach out using the contact information below.
             </li>
           </ul>
         </div>
