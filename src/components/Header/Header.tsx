@@ -33,7 +33,7 @@ const Header = ({ isHomepage }: HeaderProps) => {
   }, [isMenuOpening])
 
   return (
-    <header id="header">
+    <header className="scroll-mt-72" id="header">
       <NavBar
         isMenuOpening={isMenuOpening}
         setIsMenuOpening={setIsMenuOpening}
