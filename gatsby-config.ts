@@ -16,6 +16,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-smoothscroll',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-postcss',
+    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
