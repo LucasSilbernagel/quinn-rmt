@@ -6,7 +6,11 @@ import { FaEnvelope, FaPhoneAlt, FaFacebookSquare } from 'react-icons/fa'
 const Contact = () => {
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-      <div className="Contact" id="contact-section">
+      <div
+        className="Contact"
+        id="contact-section"
+        data-testid="contact-section"
+      >
         <h3 className="SectionHeader">Contact</h3>
         <div className="flex justify-between flex-col xl:flex-row">
           <div className="max-w-max mx-auto">
@@ -42,6 +46,7 @@ const Contact = () => {
                   rel="noreferrer"
                   aria-label="Facebook for Quinn Bonnett, RMT"
                   className="hover:scale-110 focus:scale-110 duration-300"
+                  data-testid="facebook-icon-link"
                 >
                   <FaFacebookSquare className="text-2xl" />
                 </a>
@@ -58,6 +63,7 @@ const Contact = () => {
           </div>
           <div className="MapContainer">
             <StaticImage
+              data-testid="map-image"
               alt="38 Main St E, Vankleek Hill, ON, K0B 1R0"
               src="../../images/location.png"
             />

@@ -5,10 +5,10 @@ import './Header.css'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 
 interface HeaderProps {
-  isHomepage: boolean
+  isHomePage: boolean
 }
 
-const Header = ({ isHomepage }: HeaderProps) => {
+const Header = ({ isHomePage }: HeaderProps) => {
   const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -33,14 +33,14 @@ const Header = ({ isHomepage }: HeaderProps) => {
   }, [isMenuOpening])
 
   return (
-    <header className="scroll-mt-72" id="header">
+    <header className="scroll-mt-72" id="header" data-testid="header">
       <NavBar
         isMenuOpening={isMenuOpening}
         setIsMenuOpening={setIsMenuOpening}
         isMenuOpen={isMenuOpen}
-        isHomepage={isHomepage}
+        isHomePage={isHomePage}
       />
-      {isHomepage && (
+      {isHomePage && (
         <div className="HeroText">
           <h1>Quinn Bonnett</h1>
           <h2>Registered Massage Therapist</h2>
@@ -49,6 +49,7 @@ const Header = ({ isHomepage }: HeaderProps) => {
             target="_blank"
             rel="noreferrer"
             className="AppointmentButton relative z-10 mt-12 mx-auto md:ml-0"
+            data-testid="hero-book-link"
           >
             <FaCalendarAlt /> Book an appointment
           </a>
@@ -60,8 +61,8 @@ const Header = ({ isHomepage }: HeaderProps) => {
           className="MobileMenu__Background"
         ></div>
       )}
-      {isHomepage && (
-        <div className="ScrollButton">
+      {isHomePage && (
+        <div className="ScrollButton" data-testid="scroll-button">
           <button
             onClick={() => scrollTo('#about-section')}
             aria-label="scroll down"
