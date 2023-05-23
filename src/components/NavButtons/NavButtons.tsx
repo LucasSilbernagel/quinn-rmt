@@ -49,6 +49,7 @@ const NavButtons = (props: NavButtonsProps) => {
         target="_blank"
         rel="noreferrer"
         className="AppointmentButton"
+        data-testid="nav-book-appointment"
       >
         <FaCalendarAlt /> Book an appointment
       </a>
