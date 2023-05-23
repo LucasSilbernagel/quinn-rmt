@@ -30,7 +30,7 @@ const Layout = (props: ILayoutProps) => {
         pageImage={pageImage}
         pageRoute={pageRoute}
       />
-      <Header isHomepage={isHomePage} />
+      <Header isHomePage={isHomePage} />
       <main>{children}</main>
       <Footer />
     </>

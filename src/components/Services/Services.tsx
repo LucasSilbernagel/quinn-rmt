@@ -1,10 +1,14 @@
 import { SERVICES } from '../../content/services'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 
-const Pricing = () => {
+const Services = () => {
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-      <div className="mt-24 pt-2" id="services-section">
+      <div
+        className="mt-24 pt-2"
+        id="services-section"
+        data-testid="services-section"
+      >
         <h3 className="SectionHeader">Services & Pricing</h3>
         <div className="flex justify-between flex-col xl:flex-row">
           <div>
@@ -43,4 +47,4 @@ const Pricing = () => {
   )
 }
 
-export default Pricing
+export default Services

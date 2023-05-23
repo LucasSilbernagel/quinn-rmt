@@ -2,9 +2,12 @@ import { FaCopyright } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="mt-12 mb-6">
+    <footer className="mt-12 mb-6" data-testid="footer">
       <div className="text-black text-center mt-6 text-sm">
-        <p className="mb-4 max-w-max mx-auto flex items-center">
+        <p
+          className="mb-4 max-w-max mx-auto flex items-center"
+          data-testid="copyright"
+        >
           <FaCopyright aria-label="copyright" className="mr-2 text-xs" /> Quinn
           Bonnett, RMT
         </p>

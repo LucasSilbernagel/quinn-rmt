@@ -9,11 +9,11 @@ interface NavBarProps {
   isMenuOpening: boolean
   isMenuOpen: boolean
   setIsMenuOpening: Dispatch<SetStateAction<boolean>>
-  isHomepage: boolean
+  isHomePage: boolean
 }
 
 const NavBar = (props: NavBarProps) => {
-  const { isMenuOpening, setIsMenuOpening, isMenuOpen, isHomepage } = props
+  const { isMenuOpening, setIsMenuOpening, isMenuOpen, isHomePage } = props
 
   const [currentScrollPos, setCurrentScrollPos] = useState(0)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -27,10 +27,10 @@ const NavBar = (props: NavBarProps) => {
 
   const handleIconButtonClick = () => {
     setIsMenuOpening(false)
-    if (isHomepage) {
+    if (isHomePage) {
       scrollTo('#header')
     }
-    if (!isHomepage) {
+    if (!isHomePage) {
       navigate('/')
       setTimeout(() => {
         scrollTo('#header')
@@ -45,12 +45,17 @@ const NavBar = (props: NavBarProps) => {
 
   return (
     <nav
+      data-testid="nav-bar"
       className={`Nav ${
         isNavVisible ? 'top-0 backdrop-blur-[3px] bg-white' : 'top-[-120px]'
       } ${currentScrollPos > 80 ? 'shadow-lg pb-4' : ''}`}
     >
       <div className="z-10">
-        <button className="IconButton" onClick={handleIconButtonClick}>
+        <button
+          className="IconButton"
+          onClick={handleIconButtonClick}
+          data-testid="icon-button"
+        >
           <StaticImage
             src="../../images/logo.png"
             alt="Quinn Bonnett, RMT. Therapeutic massage and sports injury."
@@ -65,6 +70,7 @@ const NavBar = (props: NavBarProps) => {
           className={`MobileMenu__Button ${
             isMenuOpening ? 'MobileMenu__Button--open' : ''
           }`}
+          data-testid="mobile-menu-button"
         >
           <span></span>
           <span></span>
@@ -72,8 +78,11 @@ const NavBar = (props: NavBarProps) => {
         </button>
       </div>
       <div>
-        <div className="NavButtons NavButtons__Desktop">
-          <NavButtons isHomepage={isHomepage} />
+        <div
+          className="NavButtons NavButtons__Desktop"
+          data-testid="nav-buttons-desktop"
+        >
+          <NavButtons isHomePage={isHomePage} />
         </div>
         <div
           className={`MobileMenu ${
@@ -81,11 +90,12 @@ const NavBar = (props: NavBarProps) => {
               ? 'animate-slide-in right-0'
               : 'animate-slide-out -right-[500px]'
           } ${isMenuOpen ? 'visible' : 'invisible'}`}
+          data-testid="mobile-menu"
         >
-          <div className="NavButtons">
+          <div className="NavButtons" data-testid="nav-buttons-mobile">
             <NavButtons
               setIsMenuOpening={setIsMenuOpening}
-              isHomepage={isHomepage}
+              isHomePage={isHomePage}
             />
           </div>
         </div>

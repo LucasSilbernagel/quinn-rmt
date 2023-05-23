@@ -1,15 +1,15 @@
-import { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { navigate } from 'gatsby'
 import { FaCalendarAlt } from 'react-icons/fa'
 
 interface NavButtonsProps {
-  isHomepage: boolean
+  isHomePage: boolean
   setIsMenuOpening?: Dispatch<SetStateAction<boolean>>
 }
 
 const NavButtons = (props: NavButtonsProps) => {
-  const { setIsMenuOpening, isHomepage } = props
+  const { setIsMenuOpening, isHomePage } = props
 
   const buttons = [
     { label: 'About', selector: '#about-section' },
@@ -21,10 +21,10 @@ const NavButtons = (props: NavButtonsProps) => {
     if (setIsMenuOpening) {
       setIsMenuOpening(false)
     }
-    if (isHomepage) {
+    if (isHomePage) {
       scrollTo(selector)
     }
-    if (!isHomepage) {
+    if (!isHomePage) {
       navigate('/')
       setTimeout(() => {
         scrollTo(selector)
@@ -49,6 +49,7 @@ const NavButtons = (props: NavButtonsProps) => {
         target="_blank"
         rel="noreferrer"
         className="AppointmentButton"
+        data-testid="nav-book-appointment"
       >
         <FaCalendarAlt /> Book an appointment
       </a>
