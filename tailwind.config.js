@@ -18,12 +18,12 @@ module.exports = {
       },
       keyframes: {
         slideIn: {
-          '0%': { right: '-500px' },
+          '0%': { right: '-775px' },
           '100%': { right: '0' },
         },
         slideOut: {
           '0%': { right: '0' },
-          '100%': { right: '-500px' },
+          '100%': { right: '-775px' },
         },
       },
       animation: {
