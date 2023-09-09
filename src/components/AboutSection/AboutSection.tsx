@@ -1,25 +1,23 @@
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import './AboutSection.css'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const AboutSection = () => {
-  // const data = useStaticQuery(graphql`
-  //   query AboutSectionQuery {
-  //     sanityHomepage {
-  //       about {
-  //         children {
-  //           text
-  //         }
-  //       }
-  //       profilePhoto {
-  //         asset {
-  //           gatsbyImageData
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query AboutSectionQuery {
+      sanityHomepage {
+        about {
+          _rawChildren(resolveReferences: { maxDepth: 10 })
+        }
+        profilePhoto {
+          asset {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
@@ -30,11 +28,13 @@ const AboutSection = () => {
       >
         <h3 className="SectionHeader">About</h3>
         <div className="flex gap-12 flex-col xl:flex-row">
-          <div>{/* <p>{data.sanityHomepage.about.children.text}</p> */}</div>
+          <div>
+            <p>{data.sanityHomepage.about[0]._rawChildren[0].text}</p>
+          </div>
           <div className="PhotoContainer">
-            <StaticImage
+            <GatsbyImage
               alt="Quinn Bonnett, RMT"
-              src="../../images/Quinn.jpg"
+              image={data.sanityHomepage.profilePhoto.asset.gatsbyImageData}
             />
           </div>
         </div>
