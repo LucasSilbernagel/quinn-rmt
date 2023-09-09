@@ -12,6 +12,14 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `3npve6dv`,
+        dataset: `production`,
+        graphqlTag: 'default',
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-smoothscroll',
     'gatsby-plugin-sitemap',

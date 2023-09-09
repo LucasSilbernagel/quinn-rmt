@@ -3,6 +3,7 @@ import { FaCalendarAlt } from 'react-icons/fa'
 import NavBar from '../NavBar/NavBar'
 import './Header.css'
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import { graphql, useStaticQuery } from 'gatsby'
 
 interface HeaderProps {
   isHomePage: boolean
@@ -32,6 +33,14 @@ const Header = ({ isHomePage }: HeaderProps) => {
     }
   }, [isMenuOpening])
 
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      sanityHomepage {
+        bookingLink
+      }
+    }
+  `)
+
   return (
     <header className="scroll-mt-72" id="header" data-testid="header">
       <NavBar
@@ -45,7 +54,7 @@ const Header = ({ isHomePage }: HeaderProps) => {
           <h1>Quinn Bonnett</h1>
           <h2>Registered Massage Therapist</h2>
           <a
-            href="https://quinnbonnettrmt.janeapp.com/#staff_member/1"
+            href={data.sanityHomepage.bookingLink}
             target="_blank"
             rel="noreferrer"
             className="AppointmentButton relative z-10 mt-12 mx-auto md:ml-0"

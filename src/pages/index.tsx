@@ -5,8 +5,17 @@ import { AnimationOnScroll } from 'react-animation-on-scroll'
 import 'animate.css/animate.min.css'
 import { FaCalendarAlt } from 'react-icons/fa'
 import Layout from '../components/Layout'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const Home = () => {
+  const data = useStaticQuery(graphql`
+    query NavBarQuery {
+      sanityHomepage {
+        bookingLink
+      }
+    }
+  `)
+
   return (
     <Layout
       pageTitle="Registered Massage Therapist"
@@ -19,7 +28,7 @@ const Home = () => {
       <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
         <div className="flex justify-center my-36">
           <a
-            href="https://quinnbonnettrmt.janeapp.com/#staff_member/1"
+            href={data.sanityHomepage.bookingLink}
             target="_blank"
             rel="noreferrer"
             className="AppointmentButton"
