@@ -103,11 +103,6 @@ export default {
       validation: (Rule: { required: () => any }) => Rule.required(),
     },
     {
-      type: 'url',
-      name: 'facebook',
-      validation: (Rule: { required: () => any }) => Rule.required(),
-    },
-    {
       type: 'image',
       name: 'map',
       validation: (Rule: { required: () => any }) => Rule.required(),
