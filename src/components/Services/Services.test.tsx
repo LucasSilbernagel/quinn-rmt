@@ -1,8 +1,31 @@
 import { render, screen } from '@testing-library/react'
 import Services from './Services'
-import { SERVICES } from '../../content/services'
+import * as Gatsby from 'gatsby'
+
+const mockServices = [
+  { time: '30 minutes', price: '$30.00', _key: '1' },
+  { time: '60 minutes', price: '$60.00', _key: '2' },
+]
+
+const useStaticQuery = jest.spyOn(Gatsby, `useStaticQuery`)
+const mockUseStaticQuery = {
+  sanityHomepage: {
+    prices: mockServices,
+    pricingDescription: [
+      {
+        _rawChildren: [{ text: 'Example pricing description text', _key: '1' }],
+      },
+    ],
+  },
+}
 
 describe('Services', () => {
+  beforeEach(() => {
+    useStaticQuery.mockImplementation(() => mockUseStaticQuery)
+  })
+  afterEach(() => {
+    jest.restoreAllMocks()
+  })
   test('renders correctly', () => {
     render(<Services />)
     expect(screen.getByTestId('services-section')).toBeInTheDocument()
@@ -10,20 +33,12 @@ describe('Services', () => {
     expect(
       screen.getByText('Therapeutic and Sports Injury Massage')
     ).toBeInTheDocument()
-    SERVICES.forEach((service) => {
+    mockServices.forEach((service) => {
       expect(screen.getByText(service.time)).toBeInTheDocument()
       expect(screen.getByText(service.price)).toBeInTheDocument()
     })
     expect(
-      screen.getByText('All prices include tax and are in Canadian dollars.')
-    ).toBeInTheDocument()
-    expect(
-      screen.getByText('Only cash or e-Transfer are accepted at this time.')
-    ).toBeInTheDocument()
-    expect(
-      screen.getByText(
-        'Questions? Please reach out using the contact information below.'
-      )
+      screen.getByText('Example pricing description text')
     ).toBeInTheDocument()
   })
 })

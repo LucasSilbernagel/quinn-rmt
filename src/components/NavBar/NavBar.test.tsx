@@ -1,7 +1,21 @@
 import { render, screen } from '@testing-library/react'
 import NavBar from './NavBar'
+import * as Gatsby from 'gatsby'
+
+const useStaticQuery = jest.spyOn(Gatsby, `useStaticQuery`)
+const mockUseStaticQuery = {
+  sanityHomepage: {
+    bookingLink: 'https://quinnbonnettrmt.janeapp.com/#staff_member/1',
+  },
+}
 
 describe('NavBar', () => {
+  beforeEach(() => {
+    useStaticQuery.mockImplementation(() => mockUseStaticQuery)
+  })
+  afterEach(() => {
+    jest.restoreAllMocks()
+  })
   test('renders correctly with the menu closed', () => {
     render(
       <NavBar
@@ -42,11 +56,6 @@ describe('NavBar', () => {
     )
     expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
     expect(screen.getByTestId('icon-button')).toBeInTheDocument()
-    expect(
-      screen.getByAltText(
-        'Quinn Bonnett, RMT. Therapeutic massage and sports injury.'
-      )
-    ).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu-button')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu-button')).toHaveClass(
       'MobileMenu__Button--open'
@@ -71,11 +80,6 @@ describe('NavBar', () => {
     )
     expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
     expect(screen.getByTestId('icon-button')).toBeInTheDocument()
-    expect(
-      screen.getByAltText(
-        'Quinn Bonnett, RMT. Therapeutic massage and sports injury.'
-      )
-    ).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu-button')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu-button')).not.toHaveClass(
       'MobileMenu__Button--open'
