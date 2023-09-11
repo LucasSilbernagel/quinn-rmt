@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { defineArrayMember, defineField } from 'sanity'
-import priceItem from './priceItem'
+import {defineArrayMember, defineField} from 'sanity'
 
 export default {
   name: 'homepage',
@@ -10,14 +9,14 @@ export default {
     {
       type: 'url',
       name: 'bookingLink',
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: {required: () => any}) => Rule.required(),
     },
     {
       type: 'array',
       name: 'about',
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: {required: () => any}) => Rule.required(),
       of: [
-        { type: 'block' },
+        {type: 'block'},
         {
           title: 'Image',
           name: 'image',
@@ -27,7 +26,7 @@ export default {
               name: 'altText',
               type: 'string',
               title: 'AltText',
-              validation: (Rule: { required: () => any }) => Rule.required(),
+              validation: (Rule: {required: () => any}) => Rule.required(),
             },
           ],
         },
@@ -36,13 +35,13 @@ export default {
     {
       type: 'image',
       name: 'profilePhoto',
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: {required: () => any}) => Rule.required(),
     },
     defineField({
       name: 'prices',
       type: 'array',
       title: 'Prices',
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: {required: () => any}) => Rule.required(),
       of: [
         defineArrayMember({
           type: 'priceItem',
@@ -53,9 +52,9 @@ export default {
     {
       type: 'array',
       name: 'pricingDescription',
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: {required: () => any}) => Rule.required(),
       of: [
-        { type: 'block' },
+        {type: 'block'},
         {
           title: 'Image',
           name: 'image',
@@ -65,7 +64,7 @@ export default {
               name: 'altText',
               type: 'string',
               title: 'AltText',
-              validation: (Rule: { required: () => any }) => Rule.required(),
+              validation: (Rule: {required: () => any}) => Rule.required(),
             },
           ],
         },
@@ -74,9 +73,9 @@ export default {
     {
       type: 'array',
       name: 'address',
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: {required: () => any}) => Rule.required(),
       of: [
-        { type: 'block' },
+        {type: 'block'},
         {
           title: 'Image',
           name: 'image',
@@ -86,7 +85,7 @@ export default {
               name: 'altText',
               type: 'string',
               title: 'AltText',
-              validation: (Rule: { required: () => any }) => Rule.required(),
+              validation: (Rule: {required: () => any}) => Rule.required(),
             },
           ],
         },
@@ -95,17 +94,17 @@ export default {
     {
       type: 'string',
       name: 'email',
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: {required: () => any}) => Rule.required(),
     },
     {
       type: 'string',
       name: 'phone',
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: {required: () => any}) => Rule.required(),
     },
     {
       type: 'image',
       name: 'map',
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: {required: () => any}) => Rule.required(),
     },
   ],
 }

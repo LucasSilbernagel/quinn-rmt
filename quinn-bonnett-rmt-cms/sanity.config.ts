@@ -2,7 +2,7 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import { media, mediaAssetSource } from 'sanity-plugin-media'
+import {media, mediaAssetSource} from 'sanity-plugin-media'
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
 
@@ -37,9 +37,7 @@ export default defineConfig({
     // Don't use this plugin when selecting files only (but allow all other enabled asset sources)
     file: {
       assetSources: (previousAssetSources) => {
-        return previousAssetSources.filter(
-          (assetSource) => assetSource !== mediaAssetSource
-        )
+        return previousAssetSources.filter((assetSource) => assetSource !== mediaAssetSource)
       },
     },
   },
@@ -47,13 +45,12 @@ export default defineConfig({
   document: {
     actions: (input, context) =>
       singletonTypes.has(context.schemaType)
-        ? input.filter(({ action }) => action && singletonActions.has(action))
+        ? input.filter(({action}) => action && singletonActions.has(action))
         : input,
   },
 
   schema: {
     types: schemaTypes,
-    templates: (templates) =>
-      templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+    templates: (templates) => templates.filter(({schemaType}) => !singletonTypes.has(schemaType)),
   },
 })
