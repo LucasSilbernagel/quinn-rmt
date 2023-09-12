@@ -1,7 +1,21 @@
 import { render, screen } from '@testing-library/react'
 import NavButtons from './NavButtons'
+import * as Gatsby from 'gatsby'
+
+const useStaticQuery = jest.spyOn(Gatsby, `useStaticQuery`)
+const mockUseStaticQuery = {
+  sanityHomepage: {
+    bookingLink: 'https://quinnbonnettrmt.janeapp.com/#staff_member/1',
+  },
+}
 
 describe('NavButtons', () => {
+  beforeEach(() => {
+    useStaticQuery.mockImplementation(() => mockUseStaticQuery)
+  })
+  afterEach(() => {
+    jest.restoreAllMocks()
+  })
   test('renders correctly', () => {
     render(<NavButtons setIsMenuOpening={jest.fn()} isHomePage={false} />)
     expect(screen.getByText('About')).toBeInTheDocument()

@@ -15,10 +15,15 @@ https://quinnbonnettrmt.com/
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind](https://tailwindcss.com/)
+- [gatsby-source-sanity](gatsby-source-sanity)
 - [animate.css](https://animate.style/)
 - [react-animation-on-scroll](https://www.npmjs.com/package/react-animation-on-scroll)
 - [react-icons](https://www.npmjs.com/package/react-icons)
 - [react-smooth-collapse](https://www.npmjs.com/package/react-smooth-collapse)
+
+### Content Management
+
+- [Sanity](https://www.sanity.io/)
 
 ### Linting & Formatting
 
@@ -47,7 +52,12 @@ To install all of the required dependencies, run `npm install`.
 
 ### Start up the app
 
-To start up the app locally, run `npm start` in your terminal. Your terminal should indicate a `localhost` URL at which you can view the app in your browser.
+- To start up the app locally, run `npm start` in your terminal. Your terminal should indicate a `localhost` URL at which you can view the app in your browser.
+- To add and edit content in Sanity Studio, `cd` into the `studio` folder, run `npm run dev`, and visit http://localhost:3333/content/desk/homepage.
+  - Note that you won't have access to sign into my Sanity studio, you will have to generate your own project ID:
+    - Visit https://www.sanity.io/ and create an account if you don't already have one.
+    - Follow the instructions to create a new project and make a note of the project ID.
+    - In your code editor, search for `projectId` and replace the value there with your own Sanity project ID. This should be done in three files: `sanity.cli.ts`, `sanity.config.ts`, and `gatsby-config.ts`.
 
 ## Testing
 

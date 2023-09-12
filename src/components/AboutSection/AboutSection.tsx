@@ -1,8 +1,24 @@
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import './AboutSection.css'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const AboutSection = () => {
+  const data = useStaticQuery(graphql`
+    query AboutSectionQuery {
+      sanityHomepage {
+        about {
+          _rawChildren(resolveReferences: { maxDepth: 10 })
+        }
+        profilePhoto {
+          asset {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
       <div
@@ -13,21 +29,12 @@ const AboutSection = () => {
         <h3 className="SectionHeader">About</h3>
         <div className="flex gap-12 flex-col xl:flex-row">
           <div>
-            <p>
-              I graduated with honours from International Academy of Health
-              Science in 2018. I started working at Agility Physio clinic in
-              Ottawa after my graduation. My approach while working with you is
-              to understand your current goals and find strategies to help you
-              reach them. I do this through a focused and straight forward
-              approach regarding treatment and homecare. Whether your goal is to
-              reach a new level of performance or to feel comfortable in the
-              activities of daily life, I will help you get there.
-            </p>
+            <p>{data.sanityHomepage.about[0]._rawChildren[0].text}</p>
           </div>
           <div className="PhotoContainer">
-            <StaticImage
+            <GatsbyImage
               alt="Quinn Bonnett, RMT"
-              src="../../images/Quinn.jpg"
+              image={data.sanityHomepage.profilePhoto.asset.gatsbyImageData}
             />
           </div>
         </div>

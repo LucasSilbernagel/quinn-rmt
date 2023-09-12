@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-import { navigate } from 'gatsby'
+import { navigate, graphql, useStaticQuery } from 'gatsby'
 import { FaCalendarAlt } from 'react-icons/fa'
 
 interface NavButtonsProps {
@@ -32,6 +32,14 @@ const NavButtons = (props: NavButtonsProps) => {
     }
   }
 
+  const data = useStaticQuery(graphql`
+    query NavButtons {
+      sanityHomepage {
+        bookingLink
+      }
+    }
+  `)
+
   return (
     <>
       {buttons.map((button) => {
@@ -45,7 +53,7 @@ const NavButtons = (props: NavButtonsProps) => {
         )
       })}
       <a
-        href="https://quinnbonnettrmt.janeapp.com/#staff_member/1"
+        href={data.sanityHomepage.bookingLink}
         target="_blank"
         rel="noreferrer"
         className="AppointmentButton"

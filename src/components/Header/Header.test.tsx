@@ -1,7 +1,21 @@
 import { render, screen } from '@testing-library/react'
 import Header from './Header'
+import * as Gatsby from 'gatsby'
+
+const useStaticQuery = jest.spyOn(Gatsby, `useStaticQuery`)
+const mockUseStaticQuery = {
+  sanityHomepage: {
+    bookingLink: 'https://quinnbonnettrmt.janeapp.com/#staff_member/1',
+  },
+}
 
 describe('Header', () => {
+  beforeEach(() => {
+    useStaticQuery.mockImplementation(() => mockUseStaticQuery)
+  })
+  afterEach(() => {
+    jest.restoreAllMocks()
+  })
   test('renders correctly on the homepage', () => {
     render(<Header isHomePage={true} />)
     expect(screen.getByTestId('header')).toBeInTheDocument()

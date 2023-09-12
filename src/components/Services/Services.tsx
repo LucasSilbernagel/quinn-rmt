@@ -1,7 +1,22 @@
-import { SERVICES } from '../../content/services'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const Services = () => {
+  const data = useStaticQuery(graphql`
+    query ServicesQuery {
+      sanityHomepage {
+        prices {
+          time
+          price
+          _key
+        }
+        pricingDescription {
+          _rawChildren(resolveReferences: { maxDepth: 10 })
+        }
+      }
+    }
+  `)
+
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
       <div
@@ -16,30 +31,41 @@ const Services = () => {
               Therapeutic and Sports Injury Massage
             </h4>
             <ul className="mx-auto max-w-max pt-4">
-              {SERVICES.map((service) => {
-                return (
-                  <li
-                    key={service.id}
-                    className="flex gap-4 mb-4 text-lg relative"
-                  >
-                    <div className="absolute w-6 h-2 bg-accent-1 top-[19px] left-1/2"></div>
-                    <div className="bg-accent-1 text-white p-2 rounded-sm">
-                      {service.time}
-                    </div>
-                    <div className="bg-accent-1 text-white p-2 rounded-sm">
-                      {service.price}
-                    </div>
-                  </li>
-                )
-              })}
+              {data.sanityHomepage.prices.map(
+                (service: { _key: string; time: string; price: string }) => {
+                  return (
+                    <li
+                      key={service._key}
+                      className="flex gap-4 mb-4 text-lg relative"
+                    >
+                      <div className="absolute w-6 h-2 bg-accent-1 top-[19px] left-1/2"></div>
+                      <div className="bg-accent-1 text-white p-2 rounded-sm">
+                        {service.time}
+                      </div>
+                      <div className="bg-accent-1 text-white p-2 rounded-sm">
+                        {service.price}
+                      </div>
+                    </li>
+                  )
+                }
+              )}
             </ul>
           </div>
           <ul className="list-disc text-lg font-bold max-w-[450px]">
-            <li>All prices include tax and are in Canadian dollars.</li>
-            <li>Only cash or e-Transfer are accepted at this time.</li>
-            <li>
-              Questions? Please reach out using the contact information below.
-            </li>
+            {data.sanityHomepage.pricingDescription.map(
+              (description: {
+                _rawChildren: {
+                  text: string
+                  _key: string
+                }[]
+              }) => {
+                return (
+                  <li key={description._rawChildren[0]._key}>
+                    {description._rawChildren[0].text}
+                  </li>
+                )
+              }
+            )}
           </ul>
         </div>
       </div>
