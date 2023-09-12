@@ -10,7 +10,7 @@ const singletonTypes = new Set(['homepage'])
 
 export default defineConfig({
   name: 'default',
-  title: 'Quinn Bonnett RMT CMS',
+  title: 'Content Studio',
   basePath: '/content',
 
   projectId: '3npve6dv',
