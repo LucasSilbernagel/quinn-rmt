@@ -31,7 +31,7 @@ const Header = ({ isHomePage }: HeaderProps) => {
         setIsMenuOpen(false)
       }, 500)
     }
-  }, [isMenuOpening])
+  }, [isMenuOpening, isMenuOpen])
 
   const data = useStaticQuery(graphql`
     query HeaderQuery {
