@@ -44,23 +44,24 @@ const NavButtons = (props: NavButtonsProps) => {
     <>
       {buttons.map((button) => {
         return (
-          <button
-            key={button.selector}
-            onClick={() => handleClick(button.selector)}
-          >
-            {button.label}
-          </button>
+          <li key={button.selector}>
+            <button onClick={() => handleClick(button.selector)}>
+              {button.label}
+            </button>
+          </li>
         )
       })}
-      <a
-        href={data.sanityHomepage.bookingLink}
-        target="_blank"
-        rel="noreferrer"
-        className="AppointmentButton"
-        data-testid="nav-book-appointment"
-      >
-        <FaCalendarAlt /> Book an appointment
-      </a>
+      <li>
+        <a
+          href={data.sanityHomepage.bookingLink}
+          target="_blank"
+          rel="noreferrer"
+          className="AppointmentButton"
+          data-testid="nav-book-appointment"
+        >
+          <FaCalendarAlt /> Book an appointment
+        </a>
+      </li>
     </>
   )
 }

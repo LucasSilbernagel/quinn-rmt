@@ -67,6 +67,7 @@ const Header = ({ isHomePage }: HeaderProps) => {
         setIsMenuOpening={setIsMenuOpening}
         isMenuOpen={isMenuOpen}
         isHomePage={isHomePage}
+        windowWidth={windowWidth}
       />
       {isHomePage && (
         <div className="HeroText">
