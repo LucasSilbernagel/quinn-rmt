@@ -6,15 +6,6 @@ html,
 body {
   @apply bg-white text-black;
   font-family: "Inter", sans-serif;
-  scrollbar-color: #233554 transparent;
-}
-
-body::-webkit-scrollbar {
-  @apply w-2 bg-transparent h-full;
-}
-
-body::-webkit-scrollbar-thumb {
-  @apply bg-accent-1 rounded-md;
 }
 
 main {

@@ -11,7 +11,7 @@
 }
 
 .Nav .NavButtons {
-  @apply text-lg text-accent-1;
+  @apply text-lg text-accent-1 list-none;
 }
 
 .Nav .MobileMenu {

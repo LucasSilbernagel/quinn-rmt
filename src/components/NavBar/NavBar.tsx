@@ -1,19 +1,55 @@
 import { StaticImage } from 'gatsby-plugin-image'
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
 import NavButtons from '../NavButtons/NavButtons'
 import './NavBar.css'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { navigate } from 'gatsby'
+import FocusTrap from 'focus-trap-react'
 
 interface NavBarProps {
   isMenuOpening: boolean
   isMenuOpen: boolean
   setIsMenuOpening: Dispatch<SetStateAction<boolean>>
   isHomePage: boolean
+  windowWidth: number
+}
+
+const MenuContainer = ({
+  isMenuOpening,
+  windowWidth,
+  children,
+}: {
+  isMenuOpening: boolean
+  windowWidth: number
+  children: ReactNode
+}) => {
+  return (
+    <FocusTrap
+      active={windowWidth < 1024 && isMenuOpening}
+      focusTrapOptions={{
+        clickOutsideDeactivates: true,
+        escapeDeactivates: true,
+      }}
+    >
+      <div
+        role={windowWidth < 1024 && isMenuOpening ? 'dialog' : undefined}
+        aria-modal={windowWidth < 1024 && isMenuOpening ? true : undefined}
+        aria-label="navigation menu"
+      >
+        {children}
+      </div>
+    </FocusTrap>
+  )
 }
 
 const NavBar = (props: NavBarProps) => {
-  const { isMenuOpening, setIsMenuOpening, isMenuOpen, isHomePage } = props
+  const {
+    isMenuOpening,
+    setIsMenuOpening,
+    isMenuOpen,
+    isHomePage,
+    windowWidth,
+  } = props
 
   const [currentScrollPos, setCurrentScrollPos] = useState(0)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -55,51 +91,57 @@ const NavBar = (props: NavBarProps) => {
           className="IconButton"
           onClick={handleIconButtonClick}
           data-testid="icon-button"
+          aria-label="home"
         >
           <StaticImage
             src="../../images/logo.png"
-            alt="Quinn Bonnett, RMT. Therapeutic massage and sports injury."
+            alt=""
             className="h-full w-full"
           />
         </button>
       </div>
-      <div className={`flex lg:hidden z-20 fixed right-4`}>
-        <button
-          aria-label={isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'}
-          onClick={() => setIsMenuOpening(!isMenuOpen)}
-          className={`MobileMenu__Button ${
-            isMenuOpening ? 'MobileMenu__Button--open' : ''
-          }`}
-          data-testid="mobile-menu-button"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-      <div>
-        <div
-          className="NavButtons NavButtons__Desktop"
-          data-testid="nav-buttons-desktop"
-        >
-          <NavButtons isHomePage={isHomePage} />
+      <MenuContainer isMenuOpening={isMenuOpening} windowWidth={windowWidth}>
+        <div className={`flex lg:hidden z-20 fixed right-4 top-[35px]`}>
+          <button
+            aria-label={
+              isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'
+            }
+            aria-expanded={isMenuOpening}
+            onClick={() => setIsMenuOpening(!isMenuOpen)}
+            className={`MobileMenu__Button ${
+              isMenuOpening ? 'MobileMenu__Button--open' : ''
+            }`}
+            data-testid="mobile-menu-button"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        <div
-          className={`MobileMenu ${
-            isMenuOpening
-              ? 'animate-slide-in right-0'
-              : 'animate-slide-out -right-[775px]'
-          } ${isMenuOpen ? 'visible' : 'invisible'}`}
-          data-testid="mobile-menu"
-        >
-          <div className="NavButtons" data-testid="nav-buttons-mobile">
-            <NavButtons
-              setIsMenuOpening={setIsMenuOpening}
-              isHomePage={isHomePage}
-            />
+        <div>
+          <ul
+            className="NavButtons NavButtons__Desktop"
+            data-testid="nav-buttons-desktop"
+          >
+            <NavButtons isHomePage={isHomePage} />
+          </ul>
+          <div
+            className={`MobileMenu ${
+              isMenuOpening
+                ? 'animate-slide-in right-0'
+                : 'animate-slide-out -right-[775px]'
+            } ${isMenuOpen ? 'visible' : 'invisible'}`}
+            data-testid="mobile-menu"
+          >
+            <ul className="NavButtons" data-testid="nav-buttons-mobile">
+              <NavButtons
+                setIsMenuOpening={setIsMenuOpening}
+                isHomePage={isHomePage}
+              />
+            </ul>
           </div>
         </div>
-      </div>
+      </MenuContainer>
     </nav>
   )
 }
