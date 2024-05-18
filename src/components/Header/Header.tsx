@@ -12,6 +12,18 @@ interface HeaderProps {
 const Header = ({ isHomePage }: HeaderProps) => {
   const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [setWindowWidth])
 
   useEffect(() => {
     if (isMenuOpening) {
@@ -26,12 +38,19 @@ const Header = ({ isHomePage }: HeaderProps) => {
       document.body.style.overflow = 'hidden'
     } else {
       document.removeEventListener('keydown', (e) => e.key === 'Escape')
-      document.body.style.overflow = 'scroll'
+      document.body.style.overflow = 'auto'
       setTimeout(() => {
         setIsMenuOpen(false)
       }, 500)
     }
   }, [isMenuOpening, isMenuOpen])
+
+  useEffect(() => {
+    if (windowWidth > 1023) {
+      setIsMenuOpening(false)
+      document.body.style.overflow = 'auto'
+    }
+  }, [windowWidth])
 
   const data = useStaticQuery(graphql`
     query HeaderQuery {
