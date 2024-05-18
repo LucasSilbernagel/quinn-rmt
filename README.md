@@ -20,6 +20,7 @@ https://quinnbonnettrmt.com/
 - [react-animation-on-scroll](https://www.npmjs.com/package/react-animation-on-scroll)
 - [react-icons](https://www.npmjs.com/package/react-icons)
 - [react-smooth-collapse](https://www.npmjs.com/package/react-smooth-collapse)
+- [focus-trap-react](https://www.npmjs.com/package/focus-trap-react)
 
 ### Content Management
 
