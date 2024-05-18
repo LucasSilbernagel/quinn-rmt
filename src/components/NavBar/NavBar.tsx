@@ -23,22 +23,23 @@ const MenuContainer = ({
   windowWidth: number
   children: ReactNode
 }) => {
-  if (windowWidth < 1024 && isMenuOpening) {
-    return (
-      <FocusTrap
-        focusTrapOptions={{
-          clickOutsideDeactivates: true,
-          escapeDeactivates: true,
-        }}
+  return (
+    <FocusTrap
+      active={windowWidth < 1024 && isMenuOpening}
+      focusTrapOptions={{
+        clickOutsideDeactivates: true,
+        escapeDeactivates: true,
+      }}
+    >
+      <div
+        role={windowWidth < 1024 && isMenuOpening ? 'dialog' : undefined}
+        aria-modal={windowWidth < 1024 && isMenuOpening ? true : undefined}
+        aria-label="navigation menu"
       >
-        <div role="dialog" aria-modal="true" aria-label="navigation menu">
-          {children}
-        </div>
-      </FocusTrap>
-    )
-  } else {
-    return <div>{children}</div>
-  }
+        {children}
+      </div>
+    </FocusTrap>
+  )
 }
 
 const NavBar = (props: NavBarProps) => {
@@ -118,12 +119,12 @@ const NavBar = (props: NavBarProps) => {
           </button>
         </div>
         <div>
-          <div
+          <ul
             className="NavButtons NavButtons__Desktop"
             data-testid="nav-buttons-desktop"
           >
             <NavButtons isHomePage={isHomePage} />
-          </div>
+          </ul>
           <div
             className={`MobileMenu ${
               isMenuOpening
